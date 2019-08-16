@@ -4,6 +4,9 @@ interface UserProps {
   age?: number
 }
 
+//this is a type alias - a type alias for a function
+type Callback = () => {}
+
 export class User {
 
   //an interface is a type - using an interface to describe an object
@@ -19,5 +22,11 @@ export class User {
   set(update: UserProps): void {
     //overwrite data with all the properties and values of update
     Object.assign(this.data, update);
+  }
+
+  //use a type alias instead of a inline type function annotation
+  //on(eventName: string, callback: () => {}) {
+  on(eventName: string, Callback) {
+
   }
 }
