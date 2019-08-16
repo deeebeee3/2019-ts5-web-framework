@@ -8,6 +8,10 @@ interface UserProps {
 type Callback = () => {}
 
 export class User {
+  //all the keys of this object will be strings
+  //the value of each of those keys is going to be an array of callback functions
+  //finally initialise events property as an empty object
+  events: { [key: string]: Callback[] } = {}
 
   //an interface is a type - using an interface to describe an object
   constructor(private data: UserProps) { }
