@@ -5,7 +5,7 @@ interface UserProps {
 }
 
 //this is a type alias - a type alias for a function
-type Callback = () => {}
+type Callback = () => void;
 
 export class User {
   //all the keys of this object will be strings
@@ -30,7 +30,7 @@ export class User {
 
   //use a type alias instead of a inline type function annotation
   //on(eventName: string, callback: () => {}) {
-  on(eventName: string, Callback) {
+  on(eventName: string, Callback): void {
 
   }
 }
