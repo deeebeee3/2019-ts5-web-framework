@@ -13,4 +13,8 @@ export class Attributes<T>{
     //overwrite data with all the properties and values of update
     Object.assign(this.data, update);
   }
+
+  getAll(): T {
+    return this.data;
+  }
 }
