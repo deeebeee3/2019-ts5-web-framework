@@ -1,4 +1,5 @@
 import { Eventing } from './Eventing';
+import { Sync } from './Sync';
 export interface UserProps {
   //make properties optional
   id?: number,
@@ -6,8 +7,11 @@ export interface UserProps {
   age?: number
 }
 
+const rootUrl = 'http://localhost:3000/users';
+
 export class User {
-  public events: Eventing = new Eventing();
+  public events: Eventing = new Eventing(); //probably wont want to swap this out
+  public sync: Sync<UserProps> = new Sync<UserProps>(rootUrl);
 
   //an interface is a type - using an interface to describe an object
   constructor(private data: UserProps) { }
