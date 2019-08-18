@@ -1,4 +1,3 @@
-import { UserProps } from './User';
 export class Attributes<T>{
   //an interface is a type - using an interface to describe an object
   constructor(private data: T) { }
@@ -15,13 +14,3 @@ export class Attributes<T>{
     Object.assign(this.data, update);
   }
 }
-
-const attrs = new Attributes<UserProps>({
-  id: 5,
-  age: 20,
-  name: 'asdf'
-});
-
-const name = attrs.get('name');
-const age = attrs.get('age');
-const id = attrs.get('id');
