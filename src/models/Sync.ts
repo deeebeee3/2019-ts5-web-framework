@@ -12,6 +12,7 @@ export class Sync<T extends HasId>{
   }
 
   save(data: T): AxiosPromise {
+    //ts won't know what type id is unless we use a generic constraint (extends HasId)
     const { id } = data;
 
     if (id) {
