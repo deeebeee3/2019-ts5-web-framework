@@ -10,8 +10,8 @@ export interface UserProps {
 const rootUrl = 'http://localhost:3000/users';
 
 export class User {
-  public events: Eventing = new Eventing(); //probably wont want to swap this out
-  public sync: Sync<UserProps> = new Sync<UserProps>(rootUrl);
+  public events: Eventing = new Eventing(); //probably won't want to swap this out
+  public sync: Sync<UserProps> = new Sync<UserProps>(rootUrl); // might want to swap this out...
 
   //an interface is a type - using an interface to describe an object
   constructor(private data: UserProps) { }

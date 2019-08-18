@@ -6,3 +6,5 @@ Building a Web Framework!!!
 2) > parcel index.html
 
 3) start up json server: > json-server -w db.json
+
+4) > tsc --init (create a tsconfig.json file)
