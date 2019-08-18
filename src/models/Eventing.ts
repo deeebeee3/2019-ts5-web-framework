@@ -10,7 +10,7 @@ export class Eventing {
 
   //use a type alias instead of a inline type function annotation
   //on(eventName: string, callback: () => void) {
-  on(eventName: string, callback: Callback): void {
+  on = (eventName: string, callback: Callback): void => {
     //this.events[eventName] //Callback[] //undefined, will be undefined when we first create a user so...
 
     const handlers = this.events[eventName] || []; //handlers is now guaranteed to be an array
@@ -18,7 +18,7 @@ export class Eventing {
     this.events[eventName] = handlers;
   }
 
-  trigger(eventName: string): void {
+  trigger = (eventName: string): void => {
     const handlers = this.events[eventName];
 
     if (!handlers || handlers.length === 0) {
