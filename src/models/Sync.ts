@@ -1,7 +1,7 @@
 import axios, { AxiosPromise } from 'axios';
 import { UserProps, User } from './User';
 
-export class Sync {
+export class Sync<T>{
   constructor(public rootUrl: string) {
 
   }
