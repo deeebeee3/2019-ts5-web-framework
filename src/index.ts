@@ -5,5 +5,10 @@ import { User } from './models/User';
 // user.save();
 
 const user = new User({ name: 'new record', age: 0 });
-user.save();
+
+user.events.on('change', () => {
+  console.log('change!');
+});
+
+user.events.trigger('change');
 

@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+import { Eventing } from './Eventing';
 interface UserProps {
   //make properties optional
   id?: number,
@@ -7,6 +8,8 @@ interface UserProps {
 }
 
 export class User {
+  public events: Eventing = new Eventing();
+
   //an interface is a type - using an interface to describe an object
   constructor(private data: UserProps) { }
 
