@@ -2,8 +2,9 @@ import { User } from './models/User';
 
 const user = new User({ name: 'new record', age: 0 });
 
-const id = user.attributes.get('id');
-const name = user.attributes.get('name');
-const age = user.attributes.get('age');
+//we are getting back a reference to the on method on the Eventing class
+const on = user.on;
 
-user.sync.save({ id, name, age });
+on('change', () => {
+  console.log('user was changed');
+});
