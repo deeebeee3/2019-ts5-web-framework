@@ -1,7 +1,9 @@
 import { User } from '../models/User';
 
 export class UserForm {
-  constructor(public parent: Element, public model: User) { }
+  constructor(public parent: Element, public model: User) {
+    this.bindModel();
+  }
 
   //annotiation says: object will have some keys that will be strings
   //and the values will be functions that return nothing
@@ -9,6 +11,12 @@ export class UserForm {
     return {
       'click:.set-age': this.onSetAgeClick
     };
+  }
+
+  bindModel(): void {
+    this.model.on('change', () => {
+      this.render()
+    });
   }
 
   onSetAgeClick = (): void => {
@@ -42,6 +50,8 @@ export class UserForm {
   }
 
   render(): void {
+    this.parent.innerHTML = '';
+
     const templateElement = document.createElement('template');
 
     templateElement.innerHTML = this.template();
