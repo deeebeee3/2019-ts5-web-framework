@@ -1,5 +1,7 @@
+import { User } from '../models/User';
+
 export class UserForm {
-  constructor(public parent: Element) { }
+  constructor(public parent: Element, public model: User) { }
 
   //annotiation says: object will have some keys that will be strings
   //and the values will be functions that return nothing
@@ -22,6 +24,8 @@ export class UserForm {
     return `
       <div>
         <h1>User Form</h1>
+        <div>User name: ${this.model.get('name')}</div>
+        <div>User age: ${this.model.get('age')}</div>
         <input />
         <button>Click Me</button>
       </div>
