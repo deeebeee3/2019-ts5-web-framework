@@ -1,11 +1,24 @@
 export class UserForm {
   constructor(public parent: Element) { }
 
+  //annotiation says: object will have some keys that will be strings
+  //and the values will be functions that return nothing
+  eventsMap(): { [key: string]: () => void } {
+    return {
+      'click:button': this.onButtonClick,
+    };
+  }
+
+  onButtonClick(): void {
+    console.log('Hi there');
+  }
+
   template(): string {
     return `
       <div>
         <h1>User Form</h1>
         <input />
+        <button>Click Me</button>
       </div>
       `;
   }
