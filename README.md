@@ -8,3 +8,5 @@ Building a Web Framework!!!
 3) start up json server: > json-server -w db.json
 
 4) > tsc --init (create a tsconfig.json file)
+
+5) Open 2 terminal windows - then do npm run start:db, and npm run    start:parcel
