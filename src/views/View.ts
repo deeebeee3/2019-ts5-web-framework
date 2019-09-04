@@ -1,4 +1,8 @@
-export abstract class View<T>{
+interface ModelForView {
+  on(eventName: string, callback: () => void): void;
+}
+
+export abstract class View<T extends ModelForView>{
 
   constructor(public parent: Element, public model: T) {
     this.bindModel();
@@ -9,7 +13,7 @@ export abstract class View<T>{
 
   bindModel(): void {
     this.model.on('change', () => {
-      this.render()
+      this.render();
     });
   }
 
