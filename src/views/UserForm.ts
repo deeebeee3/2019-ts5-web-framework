@@ -1,7 +1,7 @@
-import { User } from '../models/User';
+import { User, UserProps } from '../models/User';
 import { View } from './View';
 
-export class UserForm extends View {
+export class UserForm extends View<User, UserProps> {
   //annotiation says: object will have some keys that will be strings
   //and the values will be functions that return nothing
   eventsMap(): { [key: string]: () => void } {
