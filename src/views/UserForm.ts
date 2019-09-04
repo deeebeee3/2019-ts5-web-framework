@@ -1,5 +1,5 @@
-import { User, UserProps } from '../models/User';
 import { View } from './View';
+import { User, UserProps } from '../models/User';
 
 export class UserForm extends View<User, UserProps> {
   //annotiation says: object will have some keys that will be strings
